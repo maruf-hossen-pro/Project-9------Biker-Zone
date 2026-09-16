@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Biker Zone</title>
 
-    <!-- Google Fonts >>>> Poopins -->
-
+    <!-- Google Font: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -24,24 +24,44 @@
     <!-- Tailwind CSS v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Custom Tailwind Theme -->
+    <!-- Custom Theme -->
     <style type="text/tailwindcss">
       @theme {
         --color-bike-primary: #e76f51;
       }
     </style>
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
-  <body>
-    <!-- Header Section -->
-    <header class="md:container md:mx-auto">
-      <div class="navbar">
+
+  <body class="bg-white">
+    <!-- ================= HEADER ================= -->
+    <header class="max-w-6xl mx-auto px-4 lg:px-0">
+
+      <!-- Navbar -->
+      <div class="navbar px-0 py-5">
+
+        <!-- Logo + Mobile Menu -->
         <div class="flex-1">
+
+          <!-- Mobile Menu -->
           <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost lg:hidden px-2"
+            >
               <svg
-                aria-label="Menu"
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
+                class="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -54,34 +74,331 @@
                 />
               </svg>
             </div>
+
             <ul
               tabindex="-1"
-              class="menu menu-sm dropdown-content font-bold bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow-lg font-medium"
             >
-              <li><a>Home</a></li>
-              <li><a>Shop</a></li>
-              <li><a>News</a></li>
-              <li><a>Contact</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </div>
-          <a class="text-xl font-bold">Bike Zone</a>
+
+          <!-- Logo -->
+          <a class="text-2xl font-bold ml-1">
+            Bike Dekho
+          </a>
         </div>
-        <div class="navbar-center hidden lg:flex font-bold">
-          <ul class="menu menu-horizontal px-1">
-            <li><a>Home</a></li>
-            <li><a>Shop</a></li>
-            <li><a>News</a></li>
-            <li><a>Contact</a></li>
+
+        <!-- Desktop Menu -->
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal gap-2 font-medium">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
-        <div class="">
-          <a class="btn bg-bike-primary text-white">Login</a>
+
+        <!-- Login -->
+        <div>
+          <a
+            href="#"
+            class="btn bg-bike-primary hover:bg-bike-primary/90 border-none text-white px-7"
+          >
+            Login
+          </a>
         </div>
       </div>
+
+      <!-- ================= HERO CAROUSEL ================= -->
+
+      <section class="mt-2">
+
+        <div class="carousel w-full">
+
+          <!-- Slide 1 -->
+          <div id="slide1" class="carousel-item relative w-full">
+
+            <div
+              class="w-full min-h-[300px] md:min-h-[400px]  rounded-md bg-[#fff4f1] flex items-center"
+            >
+
+              <!-- Left Arrow -->
+              <a
+                href="#slide4"
+                class="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-10 text-xl text-gray-700"
+              >
+                ❮
+              </a>
+
+              <!-- Hero Content -->
+              <div
+                class="w-full grid grid-cols-1 md:grid-cols-2 items-center px-10 md:px-14 lg:px-16 py-8"
+              >
+
+                <!-- Text -->
+                <div class="text-center md:text-left">
+
+                  <h1
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-black"
+                  >
+                    Ride-on R15 V4
+                    <br />
+                    with Smile
+                  </h1>
+
+                  <p
+                    class="text-xs md:text-sm text-gray-500 max-w-md mt-4 leading-5"
+                  >
+                    Amet minim mollit non deserunt ullamco est sit aliqua
+                    dolor do amet sint. Velit officia consequat duis enim
+                    velit mollit.
+                  </p>
+
+                  <button
+                    class="btn bg-bike-primary hover:bg-bike-primary/90 border-none text-white mt-5 px-6"
+                  >
+                    Purchase
+                  </button>
+                </div>
+
+                <!-- Bike Image -->
+                <div
+                  class="flex justify-center md:justify-end items-center mt-6 md:mt-0"
+                >
+                  <img
+                    src="images/slider/bike1.png"
+                    alt="Yamaha R15 motorcycle"
+                    class="w-[240px] md:w-[300px] lg:w-[350px] h-[180px] md:h-[300px] object-cover rounded-xl mix-blend-multiply"
+                  />
+                </div>
+
+              </div>
+
+              <!-- Right Arrow -->
+              <a
+                href="#slide2"
+                class="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-10 text-xl text-bike-primary"
+              >
+                ❯
+              </a>
+
+            </div>
+          </div>
+
+
+          <!-- Slide 2 -->
+          <div id="slide2" class="carousel-item relative w-full">
+
+            <div
+              class="w-full min-h-[300px] md:min-h-[400px]  rounded-md bg-[#fff4f1] flex items-center"
+            >
+
+              <a
+                href="#slide1"
+                class="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-10 text-xl"
+              >
+                ❮
+              </a>
+
+              <div
+                class="w-full grid grid-cols-1 md:grid-cols-2 items-center px-10 md:px-14 lg:px-16 py-8"
+              >
+
+                <div class="text-center md:text-left">
+
+                  <h1
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+                  >
+                    Power Your
+                    <br />
+                    Adventure
+                  </h1>
+
+                  <p
+                    class="text-xs md:text-sm text-gray-500 max-w-md mt-4 leading-5"
+                  >
+                    Discover powerful bikes designed for speed, comfort,
+                    performance and unforgettable journeys.
+                  </p>
+
+                  <button
+                    class="btn bg-bike-primary hover:bg-bike-primary/90 border-none text-white mt-5 px-6"
+                  >
+                    Purchase
+                  </button>
+
+                </div>
+
+                <div
+                  class="flex justify-center md:justify-end mt-6 md:mt-0"
+                >
+                  <img
+                    src="images/slider/bike2.png"
+                    alt="Motorcycle"
+                    class="w-[240px] md:w-[300px] lg:w-[350px] h-[180px] md:h-[300px] object-cover rounded-xl mix-blend-multiply"
+                  />
+                </div>
+
+              </div>
+
+              <a
+                href="#slide3"
+                class="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-10 text-xl text-bike-primary"
+              >
+                ❯
+              </a>
+
+            </div>
+          </div>
+
+
+          <!-- Slide 3 -->
+          <div id="slide3" class="carousel-item relative w-full">
+
+            <div
+              class="w-full min-h-[300px] md:min-h-[400px]  rounded-md bg-[#fff4f1] flex items-center"
+            >
+
+              <a
+                href="#slide2"
+                class="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-10 text-xl"
+              >
+                ❮
+              </a>
+
+              <div
+                class="w-full grid grid-cols-1 md:grid-cols-2 items-center px-10 md:px-14 lg:px-16 py-8"
+              >
+
+                <div class="text-center md:text-left">
+
+                  <h1
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+                  >
+                    Feel The
+                    <br />
+                    Difference
+                  </h1>
+
+                  <p
+                    class="text-xs md:text-sm text-gray-500 max-w-md mt-4 leading-5"
+                  >
+                    Experience a smooth and exciting ride with our premium
+                    collection of motorcycles.
+                  </p>
+
+                  <button
+                    class="btn bg-bike-primary hover:bg-bike-primary/90 border-none text-white mt-5 px-6"
+                  >
+                    Purchase
+                  </button>
+
+                </div>
+
+                <div
+                  class="flex justify-center md:justify-end mt-6 md:mt-0"
+                >
+                  <img
+                    src="images/slider/bike3.png"
+                    alt="Premium motorcycle"
+                    class="w-[240px] md:w-[300px] lg:w-[350px] h-[180px] md:h-[300px] object-cover rounded-xl mix-blend-multiply"
+                  />
+                </div>
+
+              </div>
+
+              <a
+                href="#slide4"
+                class="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-10 text-xl text-bike-primary"
+              >
+                ❯
+              </a>
+
+            </div>
+          </div>
+
+
+          <!-- Slide 4 -->
+          <div id="slide4" class="carousel-item relative w-full">
+
+            <div
+              class="w-full min-h-[300px] md:min-h-[400px] rounded-md bg-[#fff4f1] flex items-center"
+            >
+
+              <a
+                href="#slide3"
+                class="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-10 text-xl"
+              >
+                ❮
+              </a>
+
+              <div
+                class="w-full grid grid-cols-1 md:grid-cols-2 items-center px-10 md:px-14 lg:px-16 py-8"
+              >
+
+                <div class="text-center md:text-left">
+
+                  <h1
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+                  >
+                    Ride With
+                    <br />
+                    Confidence
+                  </h1>
+
+                  <p
+                    class="text-xs md:text-sm text-gray-500 max-w-md mt-4 leading-5"
+                  >
+                    Choose your perfect motorcycle and enjoy every moment
+                    on the road.
+                  </p>
+
+                  <button
+                    class="btn bg-bike-primary hover:bg-bike-primary/90 border-none text-white mt-5 px-6"
+                  >
+                    Purchase
+                  </button>
+
+                </div>
+
+                <div
+                  class="flex justify-center md:justify-end mt-6 md:mt-0"
+                >
+                  <img
+                    src="./images/slider/bike4.png"
+                    alt="Sport motorcycle"
+                    class="w-[240px] md:w-[300px] lg:w-[350px] h-[180px] md:h-[300px] object-cover rounded-xl mix-blend-multiply"
+                  />
+                </div>
+
+              </div>
+
+              <a
+                href="#slide1"
+                class="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-10 text-xl text-bike-primary"
+              >
+                ❯
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
     </header>
 
-    <main class="md:container md:mx-auto"></main>
+    <!-- ================= MAIN ================= -->
+    <main class="max-w-6xl mx-auto px-4 lg:px-0">
 
+      <!-- Future sections will come here -->
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
     <footer></footer>
   </body>
 </html>
